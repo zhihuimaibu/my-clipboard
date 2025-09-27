@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+        http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet"/>
+    <title>Hello from Electron renderer!</title>
+</head>
+<body>
+    <div class="clipboard">
+        <header class="header">
+            <span>剪贴板📋</span>
+            <button class="clear-all">全部清除</button>
+        </header>
+        <main class="content">
+            <ul class="copies"></ul>
+        </main>
+    </div>
+    <div class="toast hidden">
+        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="success">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </span>
+        <span>已添加到剪贴版</span>
+    </div>
+</body>
+<script src="./renderer.js" type="module"></script>
+</html>
